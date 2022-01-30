@@ -1,32 +1,26 @@
+import { useLoaderData } from 'remix'
+import { getIdiomsContent } from '../utils.server'
+
+export type Post = {
+  name: string
+}
+
+export const loader = async () => {
+  const jsonText = await getIdiomsContent()
+  return JSON.parse(jsonText)
+}
+
 export default function Index() {
+  const posts = useLoaderData<Post[]>()
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div>
+      <h1>Posts</h1>
+      <div>
+        {posts.map((post, index) => (
+          <div key={index}>{post.name}</div>
+        ))}
+      </div>
     </div>
-  );
+  )
 }
