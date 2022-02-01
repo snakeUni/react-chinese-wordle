@@ -8,13 +8,17 @@ import {
 } from 'remix'
 import type { MetaFunction } from 'remix'
 import styles from './tailwind.css'
+import indexStyles from './index.css'
 
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' }
 }
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }]
+  return [
+    { rel: 'stylesheet', href: styles },
+    { rel: 'stylesheet', href: indexStyles }
+  ]
 }
 
 export default function App() {

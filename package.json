@@ -12,10 +12,15 @@
     "watch:css": "tailwindcss -i ./app/style/input.css -o ./app/style/output.css --watch"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/react": "^1.8.1",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@remix-run/react": "^1.1.3",
     "@remix-run/serve": "^1.1.3",
     "@remix-run/vercel": "^1.1.3",
     "@types/fs-extra": "^9.0.13",
+    "framer-motion": "^5",
     "fs-extra": "^10.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
