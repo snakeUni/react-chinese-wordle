@@ -1,4 +1,5 @@
 import { useLoaderData } from 'remix'
+import LineBlock from '~/components/line-block'
 import { getIdiomsContent } from '../utils.server'
 
 export type Post = {
@@ -12,14 +13,16 @@ export const loader = async () => {
 
 export default function Index() {
   const posts = useLoaderData<Post[]>()
+  const answer = posts[0]
+  const maybeAnswer = posts[1]
 
   return (
     <div>
-      <h1>Posts</h1>
-      <div>
-        {posts.map((post, index) => (
-          <div key={index}>{post.name}</div>
-        ))}
+      <div className="flex gap-2 flex-col items-center p-2">
+        <LineBlock
+          answer={answer.name}
+          maybeAnswer={maybeAnswer.name}
+        ></LineBlock>
       </div>
     </div>
   )
