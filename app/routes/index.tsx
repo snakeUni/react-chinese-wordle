@@ -28,7 +28,7 @@ export default function Index() {
   }
 
   return (
-    <div>
+    <div className={'h-full bg-white dark:bg-slate-800'}>
       <Header />
       <div className="flex p-4 justify-center">
         <div className="flex gap-2 flex-col">

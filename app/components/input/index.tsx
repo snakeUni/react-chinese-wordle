@@ -30,7 +30,7 @@ function Input(
       value={value}
       onChange={handleChange}
       placeholder={placeholder}
-      className="outline-none text-center bg-transparent p-3 border-2"
+      className="outline-none text-center bg-transparent p-3 border-2 dark:caret-slate-100 dark:text-slate-100"
       maxLength={4}
       ref={inputRef}
     ></input>

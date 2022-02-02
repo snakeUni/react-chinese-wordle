@@ -12,7 +12,7 @@ export default function Block({ color = 'gray', children }: BlockProps) {
   const colorClass = color === 'green' ? 'green' : 'border-2'
   return (
     <div
-      className={`${colorClass} flex justify-center w-20 h-20 items-center text-3xl`}
+      className={`${colorClass} flex justify-center w-20 h-20 items-center text-3xl dark:text-slate-100`}
     >
       {children}
     </div>
